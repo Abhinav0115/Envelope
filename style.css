@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: wheat;
+    
+}
+
+.envelope {
+    width: 24rem;
+    height: 20rem;
+    position: relative;
+    background-color: #FF5C58;
+    border-radius: 0px 0px 20px 20px;
+    transform-style: preserve-3d;
+    perspective: 700px;
+    cursor: pointer;
+
+}
+.envelope:before {
+    content: '';
+    position: absolute;
+    border-left: 12rem solid transparent;
+    border-right: 12rem solid #FE8F8F;
+    border-top: 10rem solid transparent;
+    border-bottom: 10rem solid #FE8F8F;
+    border-radius: 0px 0px 20px 20px;
+    z-index: 5;
+
+}
+
+.envelope:after {
+    content: '';
+    position: absolute;
+    border-left: 12rem solid #f7acab;
+    border-right: 12rem solid transparent;
+    border-top: 10rem solid transparent;
+    border-bottom: 10rem solid #f7acab;
+    border-radius: 0px 0px 20px 20px;
+
+}
+
+.envelope .cover {
+    position: absolute;
+    border-left: 12rem solid transparent;
+    border-right: 12rem solid transparent;
+    border-top: 10rem solid #FF5C58;
+    border-bottom: 10rem solid transparent;
+    transform-origin: top;
+    transition: 0.8s 0.8s ease;
+    z-index: 4;
+
+}
+
+.envelope:hover .cover {
+    transform: rotateX(180deg);
+    transition: 1s ease;
+
+}
+
+.envelope .image {
+    position: absolute;
+    width: 23rem;
+    left: 10px;
+    height: 19rem;
+    top: 10px;
+    background-color: red;
+    border-radius: 0px 0px 20px 20px;
+    background-image: url(BG.jpg);
+    background-size: cover;
+    background-position: center center;
+    transition: 1s ease;
+
+}
+
+.envelope:hover .image {
+    top: -10rem;
+    transition: 1s 1s ease;
+}
